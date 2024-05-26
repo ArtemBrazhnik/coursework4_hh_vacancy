@@ -5,7 +5,7 @@ from abc import ABC, abstractmethod
 
 class GetVacancies(ABC):
     @abstractmethod
-    def get_vacancies(self):
+    def get_vacancies(self, *args, **kwargs):
         pass
 
 
@@ -15,7 +15,7 @@ class HHApi(GetVacancies):
     def __init__(self):
         self.URL = 'https://api.hh.ru/'
 
-    def get_vacancies(self, title):
+    def get_vacancies(self, title) -> list[Vacancy]:
         params = {
             'text': title,
             'area': 1,
