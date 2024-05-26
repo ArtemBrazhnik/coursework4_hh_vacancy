@@ -18,7 +18,7 @@ class Vacancy:
     def __gt__(self, other):
         return self.salary > other.salary
 
-    def to_json(self):
+    def to_json(self) -> dict:
         """Конвертирует вакансии в JSON"""
         return {
             'title': self.title,
